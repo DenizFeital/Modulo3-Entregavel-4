@@ -63,7 +63,7 @@ Os seguintes componentes foram considerados neste arquitura inicial:
     
 ![output_0_1](https://github.com/user-attachments/assets/884f7f75-15ab-46d7-90fd-279dfe8a2c3e)
 
-No gráfico acima percebemos claramente que o item "rainfall" é um outlier. Honestamente, analisando visaulmente os dados, eles são bem diferentes mesmo. Porém tenho dúvidas se o meu código não foi preparado corretamente para tais dados.
+No gráfico acima percebemos claramente que o item "rainfall" é um outlier. Honestamente, analisando visualmente os dados, eles são bem diferentes mesmo. Porém tenho dúvidas se o meu código não foi preparado corretamente para tais dados.
 
 ![output_0_2](https://github.com/user-attachments/assets/59871e2d-ddbd-43b9-90a8-463338497c87)
 
