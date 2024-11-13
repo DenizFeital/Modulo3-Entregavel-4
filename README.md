@@ -63,17 +63,20 @@ Os seguintes componentes foram considerados neste arquitura inicial:
     
 ![output_0_1](https://github.com/user-attachments/assets/884f7f75-15ab-46d7-90fd-279dfe8a2c3e)
 
-No gráfico acima percebemos claramente que 
+No gráfico acima percebemos claramente que o item "rainfall" é um outlier. Honestamente, analisando visaulmente os dados, eles são bem diferentes mesmo. Porém tenho dúvidas se o meu código não foi preparado corretamente para tais dados.
 
 ![output_0_2](https://github.com/user-attachments/assets/59871e2d-ddbd-43b9-90a8-463338497c87)
 
+No gráfico acima percebemos que a distribuição é bem homogenea. Uma análise mais aprofundada talvez possa indicar que o gráfico não está sendo suficientemente detalhado para tal análise. Mas para este exercício podemos aceitar este resultado.
+
 ![output_0_3](https://github.com/user-attachments/assets/53069eb4-a53e-441b-abea-7c1fc475ae50)
 
+Neste gráfico também percebemos que existe uma matriz de correlação próxima do 1 (diagonal o que é um bom resultado em relação aos dados apresentados.
 
     
+Foram executados alguns testes utilizando metodologias diferentes, conforme abaixo demonstrado. No final comentarei todos eles em conjunto.
 
-
-    Acurácia Regressão Logística: 0.7909090909090909
+    **Acurácia Regressão Logística: 0.7909090909090909**
                   precision    recall  f1-score   support
     
                0       0.96      0.96      0.96        23
@@ -103,7 +106,7 @@ No gráfico acima percebemos claramente que
        macro avg       0.79      0.80      0.77       440
     weighted avg       0.79      0.79      0.77       440
     
-    Acurácia KNN: 0.9090909090909091
+    **Acurácia KNN: 0.9090909090909091**
                   precision    recall  f1-score   support
     
                0       1.00      1.00      1.00        23
@@ -133,7 +136,7 @@ No gráfico acima percebemos claramente que
        macro avg       0.92      0.92      0.91       440
     weighted avg       0.92      0.91      0.91       440
     
-    Acurácia SVM (RBF): 0.8113636363636364
+    **Acurácia SVM (RBF): 0.8113636363636364**
                   precision    recall  f1-score   support
     
                0       0.92      1.00      0.96        23
@@ -163,7 +166,7 @@ No gráfico acima percebemos claramente que
        macro avg       0.79      0.82      0.79       440
     weighted avg       0.80      0.81      0.79       440
     
-    Acurácia SVM (Polinomial): 0.43863636363636366
+    **Acurácia SVM (Polinomial): 0.43863636363636366**
                   precision    recall  f1-score   support
     
                0       0.96      1.00      0.98        23
@@ -193,7 +196,7 @@ No gráfico acima percebemos claramente que
        macro avg       0.59      0.47      0.47       440
     weighted avg       0.59      0.44      0.46       440
     
-    Acurácia SVM (Linear): 0.85
+    **Acurácia SVM (Linear): 0.85**
                   precision    recall  f1-score   support
     
                0       0.96      1.00      0.98        23
@@ -223,7 +226,7 @@ No gráfico acima percebemos claramente que
        macro avg       0.85      0.85      0.84       440
     weighted avg       0.86      0.85      0.85       440
     
-    Acurácia Decision Tree: 0.9386363636363636
+    **Acurácia Decision Tree: 0.9386363636363636**
                   precision    recall  f1-score   support
     
                0       1.00      1.00      1.00        23
@@ -253,7 +256,7 @@ No gráfico acima percebemos claramente que
        macro avg       0.94      0.94      0.94       440
     weighted avg       0.94      0.94      0.94       440
     
-    Acurácia Random Forest: 0.9545454545454546
+    **Acurácia Random Forest: 0.9545454545454546**
                   precision    recall  f1-score   support
     
                0       1.00      1.00      1.00        23
@@ -282,12 +285,48 @@ No gráfico acima percebemos claramente que
         accuracy                           0.95       440
        macro avg       0.96      0.96      0.96       440
     weighted avg       0.96      0.95      0.95       440
-    
 
+
+
+<!-- Resultado Geral -->
+## Resultado Geral
+
+**Acurácia Regressão Logística: 0.7909090909090909**
+
+**Acurácia KNN: 0.9090909090909091**
+
+**Acurácia SVM (RBF): 0.8113636363636364**
+
+**Acurácia SVM (Polinomial): 0.43863636363636366**
+
+**Acurácia SVM (Linear): 0.85**
+
+**Acurácia Decision Tree: 0.9386363636363636**
+
+**Acurácia Random Forest: 0.9545454545454546**
+
+
+Abaixo um resumo de cada um deles:
+
+Regressão Logística (0.79): A Regressão Logística é usada para classificação binária. Neste caso, ela teve uma acurácia moderada de 79%, indicando desempenho razoável.
+
+K-Nearest Neighbors (KNN) (0.91): O KNN classifica dados com base na proximidade com os vizinhos mais próximos. Com uma acurácia de 91%, ele teve um desempenho muito bom.
+
+Support Vector Machine (SVM) com Kernel RBF (0.81): O SVM com kernel RBF é eficaz para dados não lineares. Com 81% de acurácia, ele teve um desempenho bom.
+
+SVM com Kernel Polinomial (0.44): Esse kernel é útil para relações não lineares, mas teve um desempenho baixo com 44% de acurácia.
+
+SVM com Kernel Linear (0.85): O kernel linear no SVM simplifica a decisão, o que funciona bem em problemas lineares. A acurácia de 85% mostra um bom.
+
+Árvore de Decisão (0.94): Este modelo toma decisões baseadas em uma estrutura hierárquica de condições. Com 94% de acurácia, tornando-o um modelo bastante confiável neste conjunto de dados.
+
+Random Forest (0.95): Esse modelo combina várias árvores de decisão para melhorar a precisão. Com uma acurácia de 95%, ele foi o modelo mais preciso, mostrando um excelente desempenho.
+
+Melhor Modelo: O modelo de Random Forest, com 95% de acurácia, apresentou o melhor desempenho geral, sendo o mais eficaz na classificação dos dados para este engajamento.
 
 <!-- ROADMAP -->
 ## Roadmap
-* Refinar a arquitetura. Neste momento a solução ainda está em alto nivel, mas as próximsa sprints teremos uma atualização desta arquitetura.
+* Refinar a arquitetura, com mais dados para testes.
 
 ## Criação:
 
